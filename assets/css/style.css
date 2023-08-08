@@ -1,0 +1,237 @@
+:root {
+    --brown-color: #140200;
+    --brown-transparent-color: rgba(20, 2, 0, 0.8);
+    --gold-color: #b68834;
+    --text-light-color: #777777;
+    --text-dark-color: #222222;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--text-light-color);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.625em;
+}
+
+.section-gap {
+    padding: 5rem 0;
+}
+
+.title-row {
+    color: var(--text-dark-color);
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 5rem;
+}
+.title-row h1 {
+    margin-bottom: 2rem;
+}
+
+/* NAVIGATION */
+
+#navigation {
+    background: var(--brown-transparent-color);
+}
+
+#navigation header .nav .nav-item .nav-link {
+    color: white;
+    font-size: 14px;
+}
+#navigation header .nav .nav-item .nav-link:hover {
+    color: var(--gold-color);
+}
+
+/* END NAVIGATION */
+
+/* BANNER */
+
+#banner {
+    background-size: cover;
+    background: url(../img/header-bg.jpg) no-repeat center;
+}
+
+.banner-content {
+    margin: 15rem 0 30rem;
+    color: white;
+}
+
+.banner-content p {
+    text-transform: uppercase;
+}
+
+.banner-content h3 {
+    font-size: 45px;
+}
+
+.banner-content .banner-button {
+    border-radius: 15px;
+    padding: 0.5em 2em;
+    color: var(--brown-color);
+    border-color: white;
+    background: white;
+    transition: all .3s linear(0 0%, 1 100%);
+}
+
+.banner-content .banner-button:hover {
+    color: white;
+    background: transparent;
+}
+
+/* END BANNER */
+
+/* VIDEO */
+
+#about-us .description-block {
+    color: var(--text-dark-color);
+    padding-left: 5%;
+}
+#about-us .description-block h6 {
+    color: var(--gold-color);
+    margin: 0;
+}
+#about-us .description-block .quote {
+    margin: 12px 0;
+}
+
+#about-us .video-block {
+    padding: 0;
+    position: relative;
+}
+
+#about-us .video-block .video-bg {
+    width: 100%;
+}
+#about-us .video-block .play {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #00000082;
+    border-radius: 10px;
+}
+
+/* END VIDEO */
+
+/*  CATALOG */
+#catalog {
+    background: url('../img/menu-bg.jpg') center no-repeat;
+    background-size: cover;
+}
+
+#catalog .catalog-item {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    margin-bottom: 2rem;
+}
+
+#catalog .catalog-item-body {
+    background: white;
+    box-shadow: 0 10px 30px 0 rgba(182, 136, 52, 0.2);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+}
+#catalog .catalog-item-body:hover {
+    cursor: pointer;
+}
+
+#catalog .catalog-item-title h4 {
+    font-size: 20px;
+    color: var(--text-dark-color);
+}
+#catalog .catalog-item-title .price {
+    color: var(--gold-color);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/*  END CATALOG */
+
+/* REVIEWS */
+#reviews {
+    background: var(--gold-color);
+    color: white;
+}
+#reviews .title-row {
+    color: white;
+}
+
+#reviews .review-item img,
+#reviews .review-item-title {
+    margin-bottom: 1rem;
+}
+/* END REVIEWS */
+
+#blog .blog-item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 90%;
+}
+#blog .blog-item .tags {
+    margin: 1rem 0;
+}
+#blog .blog-item .tags span {
+    border: 1px solid #eee;
+    margin-right: 1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    color: var(--text-dark-color);
+    font-weight: 500;
+}
+
+#blog .blog-item .blog-item-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: var(--text-dark-color);
+}
+
+#blog .blog-item .blog-item-date {
+    font-weight: 600;
+}
+
+#footer {
+    background: url(../img/footer-bg.jpg) top center no-repeat;
+    background-size: cover;
+    padding: 15rem 0 5rem;
+    color: white;
+}
+
+#footer h4 {
+    margin-bottom: 1rem;
+}
+
+#footer a {
+    color: var(--gold-color);
+    text-decoration: none;
+}
+
+#button-addon2 {
+    background: var(--gold-color);
+    color: white;
+    border: 1px solid var(--gold-color);
+    transition: all .3s linear;
+}
+#button-addon2:hover {
+    color: var(--gold-color);
+    background: transparent;
+}
+
+#footer .footer-social {
+    padding-left: 2rem;
+}
+#footer .footer-social-list {
+    font-size: 24px;
+}
+#footer .footer-social-list a {
+    color: white;
+    margin-right: .75rem;
+}
+#footer .footer-social-list a:hover {
+    color: var(--gold-color);
+}
