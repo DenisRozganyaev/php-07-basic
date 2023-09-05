@@ -2,6 +2,7 @@
 
  match(getRequestType()) {
      'register' => createUserHandler(createUserParams()),
-     'login' => '',
+     'login' => authUserHandler(authUserParams()),
+     'create_product' => '',
      default => redirectBack()
  };
