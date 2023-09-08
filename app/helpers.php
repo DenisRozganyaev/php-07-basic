@@ -37,9 +37,12 @@ function redirect(string $path = '/'): void
 
 function redirectBack(): void
 {
-    $url = $_SERVER['HTTP_REFERER'];
-    header("Location: $url");
-    exit;
+    if (!empty($_SERVER['HTTP_REFERER'])) {
+        $url = $_SERVER['HTTP_REFERER'];
+        header("Location: $url");
+        exit;
+    }
+    redirect('/');
 }
 
 function conditionRedirect(bool $condition = false, string $path = '/'): void

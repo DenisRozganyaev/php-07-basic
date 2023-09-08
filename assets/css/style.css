@@ -235,3 +235,10 @@ body {
 #footer .footer-social-list a:hover {
     color: var(--gold-color);
 }
+
+.notification {
+    position: absolute;
+    top: 7%;
+    right: 1%;
+    padding: 0.5rem 1rem;
+}
