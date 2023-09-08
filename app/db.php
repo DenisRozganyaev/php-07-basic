@@ -29,3 +29,7 @@ function dbSelect(Tables $table, string $columns = '*', string $condition = null
     return $result ?: [];
 }
 
+function dbFind(Tables $table, int $id): array
+{
+    return dbSelect($table, condition: "id = $id", isSingle: true);
+}

@@ -6,14 +6,14 @@ require_once ADMIN_PARTS_DIR . '/header.php';
         <div class="col-2"></div>
         <div class="col-8">
             <h3>Main Products</h3>
-<!--            --><?php //showMainProductsTable(); ?>
+            <?php showMainProductsTable(); ?>
 
             <br>
             <hr>
             <br>
 
             <h3>Additional Products</h3>
-<!--            --><?php //showAdditionalProductsTable(); ?>
+            <?php showAdditionalProductsTable(); ?>
         </div>
     </div>
 </div>
