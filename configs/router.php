@@ -17,6 +17,12 @@ switch (getUrl()) {
         removeUser();
         redirect();
         break;
+    case 'cart':
+        require PAGE_DIR . '/cart.php';
+        break;
+
+
+
     case 'admin/dashboard':
         conditionRedirect(!isAdmin());
         require ADMIN_PAGE_DIR . '/dashboard.php';
