@@ -50,6 +50,7 @@
                                                class="form-control additional-qty additional-qty-<?= $addition['id'] ?>"
                                                name="additions_qty[]"
                                                max="<?= $addition['quantity'] ?>"
+                                               disabled
                                         />
                                         <span class="input-group-text additional-total"></span>
                                     </div>
