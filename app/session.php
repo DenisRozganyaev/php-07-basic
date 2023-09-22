@@ -44,7 +44,7 @@ function isAdmin(): bool
     return isAuth() ? $_SESSION['user']['isAdmin'] : false;
 }
 
-function userId(): bool
+function userId(): int
 {
     return $_SESSION['user']['id'];
 }

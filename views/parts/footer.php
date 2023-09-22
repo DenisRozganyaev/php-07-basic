@@ -9,7 +9,8 @@
             </div>
             <div class="col-12 col-md-5 footer-newsletter">
                 <h4><?= $footer['form']['title'] ?? '' ?></h4>
-                <form action="" class="w-100">
+                <form action="/" method="POST" class="w-100">
+                    <input type="hidden" name="type" value="new_subscriber">
                     <div class="input-group mb-3">
                         <label for="email"><?= $footer['form']['description'] ?? '' ?></label>
                     </div>
