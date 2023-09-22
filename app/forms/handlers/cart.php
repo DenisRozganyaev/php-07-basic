@@ -77,20 +77,20 @@ function prepareCartItems(array $cart, array $dbProducts): array
         function ($item) use ($dbProducts) {
             $product = getProductDataFromDbArray($dbProducts, $item['product_id']);
             $item = array_merge(
-              $item,
-              [
-                  'name' => $product['name'],
-                  'price' => $product['price'],
-                  'total' => $product['price'] * $item['quantity'],
-              ]
+                $item,
+                [
+                    'name' => $product['name'],
+                    'price' => $product['price'],
+                    'total' => $product['price'] * $item['quantity'],
+                ]
             );
 
             if (!empty($item['additions'])) {
                 $item['additions'] = buildAdditionsData(
-                  $item['additions'],
-                  $item['additions_qty'],
-                  $dbProducts,
-                  $item['product_id']
+                    $item['additions'],
+                    $item['additions_qty'],
+                    $dbProducts,
+                    $item['product_id']
                 );
             } else {
                 unset($item['additions']);
@@ -105,7 +105,7 @@ function prepareCartItems(array $cart, array $dbProducts): array
 function buildAdditionsData(array $additions, array $additionsQty, array $dbProducts, int $parentId): array
 {
     return array_map(
-        function($id, $quantity) use($dbProducts, $parentId) {
+        function ($id, $quantity) use ($dbProducts, $parentId) {
             $product = getProductDataFromDbArray($dbProducts, $id);
             return [
                 'product_id' => $id,
@@ -140,4 +140,40 @@ function mapCartIds(array $cart): array
     );
 
     return array_unique($result);
+}
+
+function updateCart(array $items)
+{
+    setcookie(
+        'cart',
+        json_encode(array_values($items)),
+        time() + (60 * 60 * 24 * 10)
+    );
+}
+
+function removeCartItem(array $fields)
+{
+    $cart = retrieveCartFromCookie();
+
+
+    if (isset($fields['parent_key'])) {
+        extract($fields); // $parent_key $product_key
+        unset($cart[$parent_key]['additions'][$product_key]);
+        unset($cart[$parent_key]['additions_qty'][$product_key]);
+
+        if (!empty($cart[$parent_key]['additions'])) {
+            $cart[$parent_key]['additions'] = array_values($cart[$parent_key]['additions']);
+            $cart[$parent_key]['additions_qty'] = array_values($cart[$parent_key]['additions_qty']);
+        } else {
+            $item = $cart[$parent_key];
+            unset($cart[$parent_key]);
+            $cart = addOrCombineProduct(array_values($cart), $item);
+        }
+    } else {
+        unset($cart[$fields['product_key']]);
+    }
+
+    updateCart($cart);
+    notify('Item was removed from cart');
+    redirectBack();
 }

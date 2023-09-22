@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
           integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="<?= ASSETS_URI ?>/css/main.css">
+    <link rel="stylesheet" href="<?= ASSETS_URI ?>/css/style.css">
 </head>
-<body>
-<?php include PARTS_DIR . '/notifications.php'; ?>
+<body class="account-body">
+<?php include PARTS_DIR . '/notification.php'; ?>
 <header id="navigation">
     <div class="container">
         <div class="row d-flex align-items-center justify-content-between">
-            <?php if (!empty($mainFields['navigation']['logo'])): ?>
+            <?php if (!empty($commonBlocks['navigation']['logo'])): ?>
                 <div class="col" id="logo">
                     <a href="/">
-                        <img src="<?= IMAGES_URI . $mainFields['navigation']['logo'] ?>"/>
+                        <img src="<?= IMAGES_URI . '/' . $commonBlocks['navigation']['logo'] ?>"/>
                     </a>
                 </div>
             <?php endif; ?>

@@ -10,12 +10,14 @@ require_once ACCOUNT_PARTS_DIR . '/header.php';
             <table class="table table-striped-columns">
                 <thead>
                 <th>#</th>
+                <th>Total</th>
                 <th>Created At</th>
                 </thead>
                 <tbody>
                 <?php foreach($orders as $order): ?>
                     <tr>
                         <td><a href="/account/orders/<?= $order['id'] ?>">Order #<?= $order['id'] ?></a></td>
+                        <td><?= $order['total'] ?></td>
                         <td><?= $order['created_at'] ?></td>
                     </tr>
                 <?php endforeach; ?>

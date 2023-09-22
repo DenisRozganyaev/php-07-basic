@@ -242,3 +242,18 @@ body {
     right: 1%;
     padding: 0.5rem 1rem;
 }
+
+.account-body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.account-body .nav .nav-link {
+    color: #fff;
+}
+.account-body .nav .nav-link:hover {
+    color: var(--gold-color);
+}
