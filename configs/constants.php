@@ -10,8 +10,10 @@ const APP_DIR = BASE_DIR . '/app/';
 const VIEW_DIR = BASE_DIR . '/views/';
 const PAGE_DIR = VIEW_DIR . 'pages/';
 const ADMIN_PAGE_DIR = PAGE_DIR . '/admin';
+const ACCOUNT_PAGE_DIR = PAGE_DIR . '/account';
 const PARTS_DIR = VIEW_DIR . 'parts/';
 const ADMIN_PARTS_DIR = ADMIN_PAGE_DIR . '/parts';
+const ACCOUNT_PARTS_DIR = ACCOUNT_PAGE_DIR . '/parts';
 
 define('DOMAIN', $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']);
 
@@ -36,4 +38,5 @@ enum SESSION_KEYS: string
     case LOGIN = 'login';
     case CREATE_PRODUCT = 'create_product';
     case EDIT_PRODUCT = 'edit_product';
+    case UPDATE_USER = 'update_user_info';
 }

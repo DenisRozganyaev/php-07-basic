@@ -22,7 +22,6 @@ switch (getUrl()) {
         break;
 
 
-
     case 'admin/dashboard':
         conditionRedirect(!isAdmin());
         require ADMIN_PAGE_DIR . '/dashboard.php';
@@ -45,6 +44,35 @@ switch (getUrl()) {
         }
 
         require ADMIN_PAGE_DIR . '/products/edit.php';
+        break;
+
+
+    case 'account':
+        conditionRedirect(!isAuth());
+
+        $user = dbFind(Tables::Users, userId());
+
+        require ACCOUNT_PAGE_DIR . '/dashboard.php';
+        break;
+    case 'account/orders':
+        conditionRedirect(!isAuth());
+
+        $userId = userId();
+        $orders = dbSelect(Tables::Orders, condition: "user_id = $userId");
+
+        require ACCOUNT_PAGE_DIR . '/orders/index.php';
+        break;
+    case (bool)preg_match('/account\/orders\/(\d+)/', getUrl(), $match):
+        conditionRedirect(!isAuth());
+
+        $id = end($match);
+        $order = dbFind(Tables::Orders, $id);
+
+        conditionRedirect(!$order, 'account/orders');
+
+        $products = getOrderInfo($id);
+
+        require ACCOUNT_PAGE_DIR . '/orders/show.php';
         break;
     default:
         throw new Exception(getUrl() . ' - not found', 404);
