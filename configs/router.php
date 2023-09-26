@@ -20,6 +20,17 @@ switch (getUrl()) {
     case 'cart':
         require PAGE_DIR . '/cart.php';
         break;
+    case 'unsubscribe':
+        if (empty($_GET['hash'])) {
+            notify('Wrong action', 'danger');
+            redirect();
+        }
+
+        unsubscribe();
+
+        notify("You are successfully unsubscribe from newsletters");
+        redirect();
+        break;
 
 
     case 'admin/dashboard':
