@@ -20,7 +20,7 @@
             <?php if (!empty($commonBlocks['navigation']['logo'])): ?>
                 <div class="col" id="logo">
                     <a href="/">
-                        <img src="<?= IMAGES_URI . '/' . $commonBlocks['navigation']['logo'] ?>"/>
+                        <img src="<?= IMAGES_URI . '/' . $commonBlocks['navigation']['logo'] ?>"  width="30"/>
                     </a>
                 </div>
             <?php endif; ?>

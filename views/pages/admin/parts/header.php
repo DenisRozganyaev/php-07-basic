@@ -20,7 +20,7 @@
             <?php if (!empty($mainFields['navigation']['logo'])): ?>
                 <div class="col" id="logo">
                     <a href="/">
-                        <img src="<?= IMAGES_URI . $mainFields['navigation']['logo'] ?>"/>
+                        <img src="<?= IMAGES_URI . $mainFields['navigation']['logo'] ?>"  width="30"/>
                     </a>
                 </div>
             <?php endif; ?>

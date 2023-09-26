@@ -103,3 +103,23 @@ function removeCartItemParam(): array
 
     return filter_input_array(INPUT_POST, $options);
 }
+
+function sendMailParams(): array
+{
+    $options = [
+        'emails' => [
+            'flags' => FILTER_REQUIRE_ARRAY,
+            'filter' => FILTER_VALIDATE_EMAIL
+        ],
+        'subject' => [
+            'flags' => FILTER_CALLBACK,
+            'filter' => 'is_string'
+        ],
+        'body' => [
+            'flags' => FILTER_CALLBACK,
+            'filter' => 'is_string'
+        ]
+    ];
+
+    return filter_input_array(INPUT_POST, $options);
+}

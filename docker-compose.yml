@@ -30,3 +30,11 @@ services:
       - "database_volume:/var/lib/mysql"
     networks:
       - php_basic
+  mailpit:
+    image: 'axllent/mailpit:latest'
+    container_name: mailpit
+    ports:
+      - '1025:1025'
+      - '8025:8025'
+    networks:
+      - php_basic
